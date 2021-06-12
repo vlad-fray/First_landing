@@ -6,6 +6,7 @@
 .section-heading {
   font-size: 30px;
   color: #445161;
+  width: 100%;
 }
 
 /* Header */
@@ -95,15 +96,6 @@
 .dignity {
   padding: 25px 20px;
   background-color: #f5f5f5;
-}
-
-.dignity__heading {
-  margin-bottom: 20px;
-  text-align: center;
-  color: #445161;
-}
-
-.dignity__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,6 +104,13 @@
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.dignity__heading {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #445161;
+  width: 100%;
 }
 
 .dignity__item {
@@ -135,15 +134,6 @@
 /* Screenshots section */
 .screenshots {
   padding: 25px 50px;
-}
-
-.screenshots__heading {
-  color: #445161;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.screenshots__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,6 +142,13 @@
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.screenshots__heading {
+  color: #445161;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 100%;
 }
 
 .screenshots__card {
@@ -187,14 +184,6 @@
 .reviews {
   padding: 25px 50px 20px;
   background-color: #f5f5f5;
-}
-
-.reviews__heading {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.reviews__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -203,6 +192,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.reviews__heading {
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 .reviews__card {
@@ -239,15 +233,6 @@
 }
 
 @media (max-width: 1200px) {
-  .screenshots__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
   .screenshots__card {
     max-width: 800px;
   }
@@ -260,22 +245,8 @@
   .about__image {
     display: none;
   }
-  .dignity__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
   .dignity__item {
     width: 100%;
-  }
-  .reviews__container {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   .reviews__card {
     width: 100%;
