@@ -1,4 +1,4 @@
-@import url(../css/zeroing.css);
+@import url(zeroing.css);
 $dark-bg-color: #445161;
 $grey-bg-color: #f5f5f5;
 
@@ -8,6 +8,7 @@ $grey-bg-color: #f5f5f5;
 
 .section-heading {
   font-size: 30px;
+  color: $dark-bg-color;
 }
 
 /* Header */
@@ -18,7 +19,7 @@ $grey-bg-color: #f5f5f5;
   justify-content: space-between;
   background-color: $dark-bg-color;
   color: white;
-  &__content {
+  &__container {
     width: 450px;
     margin-right: 10px;
   }
@@ -58,7 +59,7 @@ $grey-bg-color: #f5f5f5;
   padding: 50px;
   display: flex;
   justify-content: space-between;
-  &__content {
+  &__container {
     width: 650px;
     margin-right: 10px;
   }
@@ -81,7 +82,7 @@ $grey-bg-color: #f5f5f5;
 
 /* Pluses section */
 
-.pluses {
+.dignity {
   padding: 25px 20px;
   background-color: #f5f5f5;
   &__heading {
@@ -89,7 +90,7 @@ $grey-bg-color: #f5f5f5;
     text-align: center;
     color: $dark-bg-color;
   }
-  &__content {
+  &__container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -129,8 +130,7 @@ $grey-bg-color: #f5f5f5;
   &__card {
     margin-bottom: 25px;
     display: flex;
-    width: 49%;
-    min-width: 500px;
+    max-width: 49%;
     &__image {
       width: 200px;
       height: 150px;
@@ -147,6 +147,90 @@ $grey-bg-color: #f5f5f5;
     &__text {
       font-size: 16px;
       color: #333;
+    }
+  }
+}
+
+/* Reviews section */
+
+.reviews {
+  padding: 25px 50px 20px;
+  background-color: $grey-bg-color;
+  &__heading {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__card {
+    font-family: "Roboto";
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 22px;
+    width: 49%;
+    display: flex;
+    &__image {
+      width: 66px;
+      height: 66px;
+      background-color: $dark-bg-color;
+      border-radius: 50%;
+      margin-right: 5px;
+      flex-shrink: 0;
+    }
+    &__text {
+      padding: 15px 15px 5px;
+      border-radius: 5px;
+      background: #ebebeb;
+      &-author {
+        margin-top: 5px;
+        display: block;
+        color: #989898;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .screenshots {
+    &__container {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__card {
+      max-width: 800px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    &__image {
+      display: none;
+    }
+  }
+  .about {
+    &__image {
+      display: none;
+    }
+  }
+  .dignity {
+    &__container {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__item {
+      width: 100%;
+    }
+  }
+  .reviews {
+    &__container {
+      justify-content: center;
+    }
+    &__card {
+      width: 100%;
     }
   }
 }
