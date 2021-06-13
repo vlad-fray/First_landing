@@ -12,6 +12,11 @@ $grey-bg-color: #f5f5f5;
   width: 100%;
 }
 
+.wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 /* Header */
 
 .header {
@@ -86,14 +91,16 @@ $grey-bg-color: #f5f5f5;
 .dignity {
   padding: 25px 20px;
   background-color: #f5f5f5;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   &__heading {
     margin-bottom: 20px;
     text-align: center;
     color: $dark-bg-color;
     width: 100%;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   &__item {
     position: relative;
@@ -178,9 +185,21 @@ $grey-bg-color: #f5f5f5;
       flex-shrink: 0;
     }
     &__text {
+      position: relative;
       padding: 15px 15px 5px;
       border-radius: 5px;
       background: #ebebeb;
+      margin-left: 15px;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        top: 20px;
+        left: -10px;
+        background: #ebebeb;
+        transform: rotate(45deg);
+      }
       &-author {
         margin-top: 5px;
         display: block;
