@@ -46,7 +46,16 @@
               debitis dolor.
             </p>
           </div>
-          <img src="img/img" alt="about-image" class="about__image" />
+          <video
+            class="about__video"
+            src="videos/Meditating on a fitness mat.mp4"
+            width="390"
+            height="220"
+            controls
+            muted
+            autoplay
+            loop
+          ></video>
         </section>
 
         <section class="dignity">
@@ -93,15 +102,15 @@
 
         <section class="screenshots">
           <h2 class="screenshots__heading">Screenshots</h2>
-          <figure class="pluses-card">
-            <div class="pluses-card__image">
+          <figure class="screen-card">
+            <div class="screen-card__image">
               <img src="img/img" alt="screen-image" />
             </div>
-            <figcaption class="pluses-card__content">
-              <h3 class="pluses-card__heading">
+            <figcaption class="screen-card__content">
+              <h3 class="screen-card__heading">
                 The description for the image
               </h3>
-              <p class="pluses-card__text">
+              <p class="screen-card__text">
                 Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque
                 itaque, ipsa vel exercitationem ullam quos aut nostrum
                 cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde
@@ -110,15 +119,15 @@
             </figcaption>
           </figure>
 
-          <figure class="pluses-card">
-            <div class="pluses-card__image">
+          <figure class="screen-card">
+            <div class="screen-card__image">
               <img src="img/img" alt="screen-image" />
             </div>
-            <figcaption class="pluses-card__content">
-              <h3 class="pluses-card__heading">
+            <figcaption class="screen-card__content">
+              <h3 class="screen-card__heading">
                 The description for the image
               </h3>
-              <p class="pluses-card__text">
+              <p class="screen-card__text">
                 Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque
                 itaque, ipsa vel exercitationem ullam quos aut nostrum
                 cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde
@@ -127,15 +136,15 @@
             </figcaption>
           </figure>
 
-          <figure class="pluses-card">
-            <div class="pluses-card__image">
+          <figure class="screen-card">
+            <div class="screen-card__image">
               <img src="img/img" alt="screen-image" />
             </div>
-            <figcaption class="pluses-card__content">
-              <h3 class="pluses-card__heading">
+            <figcaption class="screen-card__content">
+              <h3 class="screen-card__heading">
                 The description for the image
               </h3>
-              <p class="pluses-card__text">
+              <p class="screen-card__text">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
                 facilis fuga, illo at. Natus eos, eligendi illum rerum omnis
                 porro ex, magni, explicabo veniam incidunt in quam sapiente ut
@@ -144,15 +153,15 @@
             </figcaption>
           </figure>
 
-          <figure class="pluses-card">
-            <div class="pluses-card__image">
+          <figure class="screen-card">
+            <div class="screen-card__image">
               <img src="img/img" alt="screen-image" />
             </div>
-            <figcaption class="pluses-card__content">
-              <h3 class="pluses-card__heading">
+            <figcaption class="screen-card__content">
+              <h3 class="screen-card__heading">
                 The description for the image
               </h3>
-              <p class="pluses-card__text">
+              <p class="screen-card__text">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
                 facilis fuga, illo at. Natus eos, eligendi illum rerum omnis
                 porro ex, magni, explicabo veniam incidunt in quam sapiente ut
@@ -289,21 +298,52 @@
 
         <section class="contacts">
           <h2 class="contacts__heading">Contacts</h2>
-          <form action="" class="contact-us-form">
+          <form action="#" class="contact-us-form">
             <input
               class="contact-us-form__input"
               type="text"
               placeholder="Your name:"
+              title="Vasiliy Utkin"
+              pattern="[a-zA-Z\s]+"
+              maxlength="100"
+              required
             />
             <input
               class="contact-us-form__input"
-              type="email"
+              type="text"
               placeholder="Your email:"
+              title="google@gmail.com"
+              pattern="[a-zA-Z0-9_-]+@[a-z]+\.[a-z]+"
+              maxlength="100"
+              required
+            />
+            <input
+              class="contact-us-form__input"
+              type="text"
+              placeholder="Your phone number:"
+              title="+7-999-999-99-99"
+              pattern="\+7-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+              maxlength="16"
+              required
             />
             <textarea
+              name="message-textarea"
+              id="message"
               class="contact-us-form__textarea"
               placeholder="Your message:"
+              maxlength="1000"
             ></textarea>
+            <input
+              class="contact-us-form__checkbox"
+              type="checkbox"
+              name="agreement"
+              id="agreement"
+              checked
+            />
+            <label for="agreement" class="contact-us-form__agreement">
+              I agree to receive mailings from third parties with a suspicious
+              reputation
+            </label>
             <input class="contact-us-form__button" type="submit" value="SEND" />
           </form>
 
@@ -372,8 +412,9 @@
           </div>
         </section>
       </main>
+      <footer class="footer">
+        Copyright © 2014 Product name · PSD HTML CSS
+      </footer>
     </div>
-
-    <footer class="footer">Copyright © 2014 Product name · PSD HTML CSS</footer>
   </body>
 </html>

@@ -41,6 +41,13 @@ $grey-bg-color: #f5f5f5;
   margin: 0 auto;
 }
 
+@mixin on-focus($box-shadow-color: white, $border-color: $dark-bg-color) {
+  border: 2px solid $border-color;
+  &:focus {
+    box-shadow: 0 0 0 2px $box-shadow-color;
+  }
+}
+
 /* Header */
 
 .header {
@@ -87,7 +94,7 @@ $grey-bg-color: #f5f5f5;
   display: flex;
   justify-content: space-between;
   &__container {
-    width: 650px;
+    max-width: 650px;
     margin-right: 10px;
   }
   &__heading {
@@ -98,11 +105,10 @@ $grey-bg-color: #f5f5f5;
     @include text-style($font-size: 16px, $color: #333, $line-height: 24px);
     margin-bottom: 11px;
   }
-  &__image {
-    width: 430px;
-    min-height: 245px;
+  &__video {
+    width: 390px;
+    height: 220px;
     color: white;
-    background-color: $dark-bg-color;
   }
 }
 
@@ -152,7 +158,7 @@ $grey-bg-color: #f5f5f5;
   }
 }
 
-.pluses-card {
+.screen-card {
   margin-bottom: 25px;
   display: flex;
   max-width: 49%;
@@ -280,6 +286,7 @@ $grey-bg-color: #f5f5f5;
     margin: 0 auto 20px;
     padding: 12px 0;
     border-radius: 5px;
+    @include on-focus();
   }
 }
 
@@ -300,13 +307,20 @@ $grey-bg-color: #f5f5f5;
 .contact-us-form {
   display: flex;
   flex-direction: column;
-  min-width: 505px;
+  width: 505px;
   margin: 0 50px 0 0;
   &__input {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 20px;
     @include text-style($color: $dark-bg-color);
+    @include on-focus();
+    &:valid:not(:placeholder-shown) {
+      background-color: rgb(150, 241, 178);
+    }
+    &:invalid:not(:placeholder-shown) {
+      background-color: rgb(241, 150, 150);
+    }
   }
   &__textarea {
     padding: 10px;
@@ -314,7 +328,8 @@ $grey-bg-color: #f5f5f5;
     resize: none;
     min-height: 170px;
     margin-bottom: 20px;
-    @include text-style($color: $dark-bg-color);
+    @include text-style($color: $dark-bg-color, $line-height: 24px);
+    @include on-focus();
   }
   &__button {
     width: 170px;
@@ -325,6 +340,32 @@ $grey-bg-color: #f5f5f5;
     text-transform: uppercase;
     @include text-style($color: $dark-bg-color, $font-weight: bold);
     cursor: pointer;
+    @include on-focus();
+  }
+  &__agreement {
+    position: relative;
+    padding: 0 0 0 20px;
+    margin: 0 0 20px;
+    @include text-style($color: white);
+    &::before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      border: 2px solid $dark-bg-color;
+      border-radius: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: white;
+    }
+  }
+  &__checkbox {
+    display: none;
+    &:checked ~ .contact-us-form__agreement::before {
+      background: white url(../img/tick.svg) center no-repeat;
+      box-shadow: 0 0 0 2px white;
+    }
   }
 }
 
@@ -358,6 +399,8 @@ $grey-bg-color: #f5f5f5;
   }
 }
 
+/* Footer section*/
+
 .footer {
   background: #f5f5f5;
   text-align: center;
@@ -369,8 +412,13 @@ $grey-bg-color: #f5f5f5;
 /* Adaptive */
 
 @media (max-width: 1280px) {
-  .pluses-card {
-    max-width: 800px;
+  .screenshots {
+    padding: 25px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .screen-card {
+    max-width: 700px;
     &__image {
       width: 150px;
       height: 120px;
@@ -404,13 +452,21 @@ $grey-bg-color: #f5f5f5;
 
 @media (max-width: 768px) {
   .header {
+    padding: 25px 20px;
+    &__heading {
+      font-size: 40px;
+    }
     &__image {
       display: none;
     }
   }
   .about {
-    &__image {
-      display: none;
+    padding: 30px 20px;
+    flex-direction: column;
+    align-items: center;
+    &__video {
+      width: 300px;
+      height: 180px;
     }
   }
   .dignity {
@@ -418,10 +474,19 @@ $grey-bg-color: #f5f5f5;
       width: 100%;
     }
   }
+  .reviews {
+    padding: 20px;
+  }
   .review-card {
     width: 100%;
   }
   .contact-us-form {
-    min-width: 350px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .price-card {
+    width: 100%;
   }
 }
