@@ -6,12 +6,14 @@ $grey-bg-color: #f5f5f5;
 @mixin heading-style(
   $color: $dark-bg-color,
   $font-size: 30px,
-  $font-family: "Arial"
+  $font-family: "Arial",
+  $line-height: normal
 ) {
   color: $color;
   font-size: $font-size;
   font-weight: normal;
   font-family: $font-family;
+  line-height: $line-height;
 }
 
 @mixin heading-pos($margin: 0, $text-align: center) {
@@ -37,7 +39,7 @@ $grey-bg-color: #f5f5f5;
 }
 
 .wrapper {
-  max-width: 1600px;
+  max-width: 1272px;
   margin: 0 auto;
 }
 
@@ -65,18 +67,18 @@ $grey-bg-color: #f5f5f5;
   }
   &__item {
     position: relative;
-    @include text-style($font-size: 20px, $color: white);
+    @include text-style($font-size: 20px, $color: white, $line-height: 24px);
     margin-bottom: 10px;
     padding-left: 20px;
     &:before {
       position: absolute;
-      top: 5px;
+      top: 8px;
       left: 0;
       content: "";
-      width: 10px;
-      height: 6px;
-      border-left: 3px solid white;
-      border-bottom: 3px solid white;
+      width: 15px;
+      height: 7px;
+      border-left: 2px solid white;
+      border-bottom: 2px solid white;
       transform: rotate(-45deg);
     }
   }
@@ -90,7 +92,7 @@ $grey-bg-color: #f5f5f5;
 /* About section*/
 
 .about {
-  padding: 50px;
+  padding: 45px 50px 50px;
   display: flex;
   justify-content: space-between;
   &__container {
@@ -115,11 +117,11 @@ $grey-bg-color: #f5f5f5;
 /* Pluses section */
 
 .dignity {
-  padding: 25px 20px;
+  padding: 25px 50px;
   background-color: #f5f5f5;
   &__heading {
     @include heading-style();
-    @include heading-pos($margin: 0 0 20px 0);
+    @include heading-pos($margin: 0 0 25px 0);
   }
   &__list {
     display: flex;
@@ -128,17 +130,17 @@ $grey-bg-color: #f5f5f5;
   }
   &__item {
     position: relative;
-    @include text-style($color: #333);
+    @include text-style($color: #333, $line-height: 24px);
     width: 49%;
     margin-bottom: 25px;
-    padding-left: 45px;
+    padding-left: 42px;
     &::before {
       display: block;
       position: absolute;
       content: "";
       width: 35px;
       height: 35px;
-      top: 0;
+      top: 6px;
       left: 0;
       background: url(../img/plus-icon.svg) no-repeat;
     }
@@ -154,7 +156,7 @@ $grey-bg-color: #f5f5f5;
   flex-wrap: wrap;
   &__heading {
     @include heading-style();
-    @include heading-pos($margin: 0 0 25px 0);
+    @include heading-pos($margin: 0 0 45px 0);
   }
 }
 
@@ -171,18 +173,18 @@ $grey-bg-color: #f5f5f5;
     color: white;
   }
   &__heading {
-    @include heading-style($font-size: 24px);
-    margin-bottom: 10px;
+    @include heading-style($font-size: 24px, $line-height: 24px);
+    margin-bottom: 15px;
   }
   &__text {
-    @include text-style($font-size: 16px, $color: #333);
+    @include text-style($font-size: 16px, $color: #333, $line-height: 24px);
   }
 }
 
 /* Reviews section */
 
 .reviews {
-  padding: 25px 50px 20px;
+  padding: 25px 60px 20px;
   background-color: $grey-bg-color;
   display: flex;
   flex-wrap: wrap;
@@ -194,7 +196,7 @@ $grey-bg-color: #f5f5f5;
 }
 
 .review-card {
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   width: 49%;
   display: flex;
   &__image {
@@ -202,7 +204,7 @@ $grey-bg-color: #f5f5f5;
     height: 66px;
     background-color: $dark-bg-color;
     border-radius: 50%;
-    margin-right: 5px;
+    margin: 5px 5px 0 0;
     flex-shrink: 0;
   }
   &__text {
@@ -210,9 +212,10 @@ $grey-bg-color: #f5f5f5;
     @include text-style(
       $font-family: "Roboto",
       $font-style: italic,
-      $font-size: 14px
+      $font-size: 14px,
+      $line-height: 18px
     );
-    padding: 15px 15px 5px;
+    padding: 20px 5px 5px 10px;
     border-radius: 5px;
     background: #ebebeb;
     margin-left: 15px;
@@ -221,13 +224,13 @@ $grey-bg-color: #f5f5f5;
       content: "";
       width: 20px;
       height: 20px;
-      top: 20px;
+      top: 35px;
       left: -10px;
       background: #ebebeb;
       transform: rotate(45deg);
     }
     &-author {
-      margin-top: 5px;
+      margin-top: 8px;
       display: block;
       color: #989898;
     }
@@ -253,7 +256,7 @@ $grey-bg-color: #f5f5f5;
   background-color: $dark-bg-color;
   border: 1px solid $dark-bg-color;
   border-radius: 5px;
-  margin: 0 45px;
+  margin: 0 22.5px;
   &__name {
     @include text-style($font-size: 24px, $line-height: 30px, $color: white);
     text-align: center;
@@ -266,7 +269,7 @@ $grey-bg-color: #f5f5f5;
     background-color: white;
   }
   &__list {
-    padding: 8px 15px 15px;
+    padding: 8px 20px 15px;
     list-style: inside;
     list-style-type: decimal;
   }
@@ -374,13 +377,13 @@ $grey-bg-color: #f5f5f5;
 }
 
 .contact-us-list {
-  margin: 0 0 30px;
+  margin: 10px 0 50px;
   &__item {
     display: flex;
     align-items: center;
-    margin: 0 0 20px;
+    margin: 0 0 18px;
     max-width: 250px;
-    @include text-style($color: white);
+    @include text-style($color: white, $line-height: 26px);
   }
   &__icon {
     margin-right: 5px;
