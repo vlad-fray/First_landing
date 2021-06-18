@@ -49,6 +49,13 @@ $grey-bg-color: #f5f5f5;
   }
 }
 
+@mixin on-hover($bg-color: white, $color: black) {
+  &:hover {
+    background-color: $bg-color;
+    color: $color;
+  }
+}
+
 /* Header */
 
 .header {
@@ -214,7 +221,7 @@ $grey-bg-color: #f5f5f5;
       $font-size: 14px,
       $line-height: 18px
     );
-    padding: 20px 5px 5px 10px;
+    padding: 20px 15px 5px 15px;
     border-radius: 5px;
     background: #ebebeb;
     margin-left: 15px;
@@ -289,6 +296,7 @@ $grey-bg-color: #f5f5f5;
     padding: 12px 0;
     border-radius: 5px;
     @include on-focus();
+    @include on-hover($bg-color: lighten($dark-bg-color, 20), $color: white);
   }
 }
 
@@ -343,6 +351,7 @@ $grey-bg-color: #f5f5f5;
     @include text-style($color: $dark-bg-color, $font-weight: bold);
     cursor: pointer;
     @include on-focus();
+    @include on-hover($color: white, $bg-color: lighten($dark-bg-color, 20));
   }
   &__agreement {
     position: relative;
@@ -392,12 +401,19 @@ $grey-bg-color: #f5f5f5;
 }
 
 .contact-us-social {
+  display: flex;
   &__item {
+    display: block;
     margin: 0 5px 0 0;
+    cursor: pointer;
   }
   &__icon {
     width: 45px;
     height: 45px;
+    fill: white;
+    &:hover {
+      fill: lighten($dark-bg-color, 20);
+    }
   }
 }
 
